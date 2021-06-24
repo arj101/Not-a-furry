@@ -29,6 +29,7 @@ let cooldown = new Map();
 const embedColors = ['#96ff26', '#ff2696', '#7d26ff']
 
 client.on('message', msg => {
+    if (msg.author.bot) return;
     if (msg.channel.type === 'dm') return;
 
     if (wordCompletionTracker.has(`${msg.member.id} ${msg.channel.id}`)) {
