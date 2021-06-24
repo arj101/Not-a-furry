@@ -29,8 +29,7 @@ let cooldown = new Map();
 const embedColors = ['#96ff26', '#ff2696', '#7d26ff']
 
 client.on('message', msg => {
-    if (msg.author.bot) return;
-    if (msg.channel.type === 'dm') return;
+    if (msg.channel.type === 'dm' || msg.author.bot) return;
 
     if (wordCompletionTracker.has(`${msg.member.id} ${msg.channel.id}`)) {
         let guess =  wordCompletionTracker.get(`${msg.member.id} ${msg.channel.id}`);
@@ -55,7 +54,7 @@ client.on('message', msg => {
         wordCompletionCommand(msg);
         msg.member.id
     }
-     else {
+     else if (!msg.content.startsWith('.') && msg.content.length >= 1) {
         const embed = new Discord.MessageEmbed()
             .setColor(embedColors[1])
             .setTitle("WOAH HOL' UP")
