@@ -1,3 +1,3 @@
 # Not-a-furry
 
-A random discord bot \:)
+A random discord bot :)

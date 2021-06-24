@@ -1,4 +1,3 @@
-const { RSA_PKCS1_OAEP_PADDING } = require('constants');
 const Discord = require('discord.js');
 require('discord-reply');
 const client = new Discord.Client();
@@ -204,7 +203,7 @@ async function wordCompletionCommand(msg) {
 
         msgNew.edit(new Discord.MessageEmbed()
             .setTitle(`Loading ${loadingAnimation.loader[0]? '🟡' : '🟠'}${loadingAnimation.loader[1]? '🟡' : '🟠'}${loadingAnimation.loader[2]? '🟡' : '🟠'}`)
-            .setDescription("This is gonna take a while bc my internet sux")
+            .setDescription("Hold on...")
         )
     }, 500);
 
