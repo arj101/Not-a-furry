@@ -186,7 +186,7 @@ async function wordCompletionCommand(msg) {
     let msgNew = await msg.lineReplyNoMention(
         new Discord.MessageEmbed()
             .setTitle("Loading 🟡🟠🟠")
-            .setDescription("This is gonna take a while bc my internet sux")
+            .setDescription("Hold on...")
     );
 
     let loadingAnimation = {
